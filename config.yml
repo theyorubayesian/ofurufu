@@ -1,0 +1,9 @@
+logFile: logs/ofurufu.log
+
+training:
+  modelName: boarding-pass-recognizer
+  useLabelFile: True
+  dataFilePrefix: recognizer_model_training_data
+
+
+

@@ -1,0 +1,85 @@
+08/15/2021 09:58:10 - INFO - __main__ - PID: 35367 -  --------Configurations--------
+08/15/2021 09:58:10 - INFO - __main__ - PID: 35367 -  logFile: logs/ofurufu.log
+08/15/2021 09:58:10 - INFO - __main__ - PID: 35367 -  training: {'modelName': 'boarding-pass-recognizer', 'useLabelFile': True, 'dataFilePrefix': 'recognizer_model_training_data'}
+08/15/2021 09:58:10 - INFO - __main__ - PID: 35367 -  Authenticated successfully
+08/15/2021 09:58:10 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -  Request URL: 'https://udacity-airlines-form-recognizer.cognitiveservices.azure.com//formrecognizer/v2.1/custom/models'
+08/15/2021 09:58:10 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -  Request method: 'POST'
+08/15/2021 09:58:10 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -  Request headers:
+08/15/2021 09:58:10 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'Content-Type': 'application/json'
+08/15/2021 09:58:10 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'Accept': 'application/json'
+08/15/2021 09:58:10 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'Content-Length': '343'
+08/15/2021 09:58:10 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'x-ms-client-request-id': 'eab28d48-fda6-11eb-80e1-1e009a02ec90'
+08/15/2021 09:58:10 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'User-Agent': 'azsdk-python-ai-formrecognizer/3.1.2 Python/3.8.10 (macOS-11.4-arm64-arm-64bit)'
+08/15/2021 09:58:10 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'Ocp-Apim-Subscription-Key': 'REDACTED'
+08/15/2021 09:58:10 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -  A body is sent with the request
+08/15/2021 09:58:13 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -  Response status: 201
+08/15/2021 09:58:13 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -  Response headers:
+08/15/2021 09:58:13 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'Content-Length': '0'
+08/15/2021 09:58:13 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'Location': 'https://udacity-airlines-form-recognizer.cognitiveservices.azure.com/formrecognizer/v2.1/custom/models/e0cf7507-0865-48f1-9740-388358145e7d'
+08/15/2021 09:58:13 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'x-envoy-upstream-service-time': '733'
+08/15/2021 09:58:13 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'apim-request-id': '87d18abe-471e-4767-b80d-76eac83ebdda'
+08/15/2021 09:58:13 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload'
+08/15/2021 09:58:13 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'x-content-type-options': 'nosniff'
+08/15/2021 09:58:13 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'Date': 'Sun, 15 Aug 2021 08:58:12 GMT'
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -  Request URL: 'https://udacity-airlines-form-recognizer.cognitiveservices.azure.com/formrecognizer/v2.1/custom/models/e0cf7507-0865-48f1-9740-388358145e7d?includeKeys=true'
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -  Request method: 'GET'
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -  Request headers:
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'x-ms-client-request-id': 'eab28d48-fda6-11eb-80e1-1e009a02ec90'
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'User-Agent': 'azsdk-python-ai-formrecognizer/3.1.2 Python/3.8.10 (macOS-11.4-arm64-arm-64bit)'
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'Ocp-Apim-Subscription-Key': 'REDACTED'
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -  No body was attached to the request
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -  Response status: 200
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -  Response headers:
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'Content-Length': '1506'
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'Content-Type': 'application/json; charset=utf-8'
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'x-envoy-upstream-service-time': '52'
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'apim-request-id': '5819df1e-4f86-4565-a607-ff2f18b47b0b'
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload'
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'x-content-type-options': 'nosniff'
+08/15/2021 09:58:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35367 -      'Date': 'Sun, 15 Aug 2021 08:58:17 GMT'
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Trained model ID: e0cf7507-0865-48f1-9740-388358145e7d
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Status: ready
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Training started: 2021-08-15 08:58:13+00:00
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Training completed: 2021-08-15 08:58:17+00:00
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Recognized fields:
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  The submodel with form type custom:boarding-pass-recognizer has recognized: boardingTime,date,destination,firstName,flightNo,lastName,origin
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document name: recognizer_model_training_data/01.pdf
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document status: succeeded
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document page count: 1
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document errors: []
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document name: recognizer_model_training_data/02.pdf
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document status: succeeded
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document page count: 1
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document errors: []
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document name: recognizer_model_training_data/03.pdf
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document status: succeeded
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document page count: 1
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document errors: []
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document name: recognizer_model_training_data/04.pdf
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document status: succeeded
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document page count: 1
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document errors: []
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document name: recognizer_model_training_data/05.pdf
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document status: succeeded
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document page count: 1
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document errors: []
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document name: recognizer_model_training_data/06.pdf
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document status: succeeded
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document page count: 1
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document errors: []
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document name: recognizer_model_training_data/07.pdf
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document status: succeeded
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document page count: 1
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document errors: []
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document name: recognizer_model_training_data/08.pdf
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document status: succeeded
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document page count: 1
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document errors: []
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document name: recognizer_model_training_data/09.pdf
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document status: succeeded
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document page count: 1
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document errors: []
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document name: recognizer_model_training_data/10.pdf
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document status: succeeded
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document page count: 1
+08/15/2021 09:58:18 - INFO - __main__ - PID: 35367 -  Document errors: []

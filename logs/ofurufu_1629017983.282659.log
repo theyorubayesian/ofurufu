@@ -1,0 +1,47 @@
+08/15/2021 09:59:43 - INFO - __main__ - PID: 35385 -  --------Configurations--------
+08/15/2021 09:59:43 - INFO - __main__ - PID: 35385 -  logFile: logs/ofurufu.log
+08/15/2021 09:59:43 - INFO - __main__ - PID: 35385 -  training: {'modelName': 'boarding-pass-recognizer', 'useLabelFile': True, 'dataFilePrefix': 'recognizer_model_training_data'}
+08/15/2021 09:59:43 - INFO - __main__ - PID: 35385 -  Authenticated successfully
+08/15/2021 09:59:43 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -  Request URL: 'https://udacity-airlines-form-recognizer.cognitiveservices.azure.com//formrecognizer/v2.1/custom/models/e0cf7507-0865-48f1-9740-388358145e7d/analyze?includeTextDetails=false'
+08/15/2021 09:59:43 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -  Request method: 'POST'
+08/15/2021 09:59:43 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -  Request headers:
+08/15/2021 09:59:43 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'Content-Type': 'application/pdf'
+08/15/2021 09:59:43 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'Accept': 'application/json'
+08/15/2021 09:59:43 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'x-ms-client-request-id': '21c6ab48-fda7-11eb-a805-1e009a02ec90'
+08/15/2021 09:59:43 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'User-Agent': 'azsdk-python-ai-formrecognizer/3.1.2 Python/3.8.10 (macOS-11.4-arm64-arm-64bit)'
+08/15/2021 09:59:43 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'Ocp-Apim-Subscription-Key': 'REDACTED'
+08/15/2021 09:59:43 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -  A body is sent with the request
+08/15/2021 09:59:45 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -  Response status: 202
+08/15/2021 09:59:45 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -  Response headers:
+08/15/2021 09:59:45 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'Content-Length': '0'
+08/15/2021 09:59:45 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'Operation-Location': 'https://udacity-airlines-form-recognizer.cognitiveservices.azure.com/formrecognizer/v2.1/custom/models/e0cf7507-0865-48f1-9740-388358145e7d/analyzeresults/cee3b0c7-d96a-4723-a647-90b7979781a8'
+08/15/2021 09:59:45 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'x-envoy-upstream-service-time': '178'
+08/15/2021 09:59:45 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'apim-request-id': '00397437-f398-48e0-9ef5-cbf0e7c484b7'
+08/15/2021 09:59:45 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload'
+08/15/2021 09:59:45 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'x-content-type-options': 'nosniff'
+08/15/2021 09:59:45 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'Date': 'Sun, 15 Aug 2021 08:59:45 GMT'
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -  Request URL: 'https://udacity-airlines-form-recognizer.cognitiveservices.azure.com/formrecognizer/v2.1/custom/models/e0cf7507-0865-48f1-9740-388358145e7d/analyzeresults/cee3b0c7-d96a-4723-a647-90b7979781a8'
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -  Request method: 'GET'
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -  Request headers:
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'x-ms-client-request-id': '21c6ab48-fda7-11eb-a805-1e009a02ec90'
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'User-Agent': 'azsdk-python-ai-formrecognizer/3.1.2 Python/3.8.10 (macOS-11.4-arm64-arm-64bit)'
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'Ocp-Apim-Subscription-Key': 'REDACTED'
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -  No body was attached to the request
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -  Response status: 200
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -  Response headers:
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'Content-Length': '1534'
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'Content-Type': 'application/json; charset=utf-8'
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'x-envoy-upstream-service-time': '40'
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'apim-request-id': '0e9b6e1d-f02f-4f22-b012-29ad16a0a91a'
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload'
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'x-content-type-options': 'nosniff'
+08/15/2021 09:59:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 35385 -      'Date': 'Sun, 15 Aug 2021 08:59:50 GMT'
+08/15/2021 09:59:50 - INFO - __main__ - PID: 35385 -  --------Recognizing Boarding Pass document #1--------
+08/15/2021 09:59:50 - INFO - __main__ - PID: 35385 -  source: boarding_pass/sarahmuhammad.pdf
+08/15/2021 09:59:50 - INFO - __main__ - PID: 35385 -  first_name: SARAH
+08/15/2021 09:59:50 - INFO - __main__ - PID: 35385 -  last_name: MUHAMMAD
+08/15/2021 09:59:50 - INFO - __main__ - PID: 35385 -  date: 17/07/2021
+08/15/2021 09:59:50 - INFO - __main__ - PID: 35385 -  origin: ABUJA
+08/15/2021 09:59:50 - INFO - __main__ - PID: 35385 -  destination: LAGOS
+08/15/2021 09:59:50 - INFO - __main__ - PID: 35385 -  flight_no: ABVLOS786
+08/15/2021 09:59:50 - INFO - __main__ - PID: 35385 -  boarding_time: 10:00
