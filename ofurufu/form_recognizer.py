@@ -1,7 +1,6 @@
 import argparse
 import logging
 import os
-import sys
 import time
 from typing import Union
 
@@ -16,9 +15,7 @@ load_dotenv()
 
 FORM_RECOGNIZER_KEY = os.getenv("FORM_RECOGNIZER_KEY")
 FORM_RECOGNIZER_ENDPOINT = os.getenv("FORM_RECOGNIZER_ENDPOINT")
-EXPECTED_ID_FIELDS = (os.getenv("EXPECTED_ID_FIELDS") or
-                      'Address,CountryRegion,DateOfBirth,DateOfExpiration,'
-                      'DocumentNumber,FirstName,LastName,Region,Sex').split(",")
+
 
 logging.basicConfig(
     filename=f"logs/ofurufu_{time.time()}.log",
@@ -162,7 +159,7 @@ def analyze_boarding_pass(client: FormRecognizerClient, model_id: str, document:
     return results
 
 
-def delete_trained_model(client: FormTrainingClient, model_id: str):
+def delete_trained_model(client: FormTrainingClient, model_id: str) -> None:
     client.delete_model(model_id=model_id)
 
     try:
