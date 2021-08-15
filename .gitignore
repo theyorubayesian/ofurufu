@@ -3,4 +3,4 @@
 .amlignore
 *.amltmp
 .DS_Store
-
+.env

@@ -16,7 +16,6 @@ load_dotenv()
 FORM_RECOGNIZER_KEY = os.getenv("FORM_RECOGNIZER_KEY")
 FORM_RECOGNIZER_ENDPOINT = os.getenv("FORM_RECOGNIZER_ENDPOINT")
 
-
 logging.basicConfig(
     filename=f"logs/ofurufu_{time.time()}.log",
     format="%(asctime)s - %(levelname)s - %(name)s - PID: %(process)d -  %(message)s",
