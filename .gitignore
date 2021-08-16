@@ -4,3 +4,5 @@
 *.amltmp
 .DS_Store
 .env
+.idea
+.vscode

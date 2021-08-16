@@ -5,18 +5,11 @@ import time
 
 from azure.cognitiveservices.vision.customvision.prediction import CustomVisionPredictionClient
 from azure.cognitiveservices.vision.customvision.training import CustomVisionTrainingClient
-from dotenv import load_dotenv
 from msrest.authentication import ApiKeyCredentials
 
-load_dotenv()
+from ofurufu.variables import Variables
 
-TRAINING_ENDPOINT = os.getenv("CUSTOM_VISION_ENDPOINT")
-PREDICTION_ENDPOINT = os.getenv("CUSTOM_VISION_PREDICTION_ENDPOINT")
-TRAINING_KEY = os.getenv("CUSTOM_VISION_TRAINING_KEY")
-PREDICTION_KEY = os.getenv("CUSTOM_VISION_PREDICTION_KEY")
-PREDICTION_RESOURCE_ID = os.getenv("CUSTOM_VISION_PREDICTION_RESOURCE_ID")
-PROJECT_ID = os.getenv("CUSTOM_VISION_PROJECT_ID")
-DEFAULT_MODEL_ITERATION_NAME = os.getenv("CUSTOM_VISION_DEFAULT_MODEL_ITERATION_NAME")
+v = Variables()
 
 logging.basicConfig(
     filename=f"logs/ofurufu_{time.time()}.log",
@@ -49,11 +42,11 @@ def authenticate(key: str, training: bool = False):
     if training:
         logger.info("Getting client for training")
         credentials = ApiKeyCredentials(in_headers={"Training-key": key})
-        client = CustomVisionTrainingClient(TRAINING_ENDPOINT, credentials)
+        client = CustomVisionTrainingClient(v.CUSTOM_VISION_TRAINING_ENDPOINT, credentials)
     else:
         logger.info("Getting client for prediction")
         credentials = ApiKeyCredentials(in_headers={"Prediction-key": key})
-        client = CustomVisionPredictionClient(PREDICTION_ENDPOINT, credentials)
+        client = CustomVisionPredictionClient(v.CUSTOM_VISION_PREDICTION_ENDPOINT, credentials)
     logger.info("Authenticated successfully")
     return client
 
@@ -118,7 +111,7 @@ def make_prediction(
 if __name__ == "__main__":
     args = get_parser()
     client = authenticate(
-        key=PREDICTION_KEY if args.analyse_image else TRAINING_KEY,
+        key=v.CUSTOM_VISION_PREDICTION_KEY if args.analyse_image else v.CUSTOM_VISION_TRAINING_KEY,
         training=False if args.analyse_image else True
     )
     if args.analyse_image:
@@ -126,6 +119,6 @@ if __name__ == "__main__":
             make_prediction(
                 client,
                 image,
-                PROJECT_ID,
-                args.model_iteration_name or DEFAULT_MODEL_ITERATION_NAME
+                v.CUSTOM_VISION_PROJECT_ID,
+                args.model_iteration_name or v.CUSTOM_VISION_DEFAULT_MODEL_ITERATION_NAME
             )

@@ -9,12 +9,10 @@ from azure.core.exceptions import ResourceNotFoundError
 from azure.ai.formrecognizer import FormRecognizerClient
 from azure.ai.formrecognizer import FormTrainingClient
 from azure.core.credentials import AzureKeyCredential
-from dotenv import load_dotenv
 
-load_dotenv()
+from ofurufu.variables import Variables
 
-FORM_RECOGNIZER_KEY = os.getenv("FORM_RECOGNIZER_KEY")
-FORM_RECOGNIZER_ENDPOINT = os.getenv("FORM_RECOGNIZER_ENDPOINT")
+v = Variables()
 
 logging.basicConfig(
     filename=f"logs/ofurufu_{time.time()}.log",
@@ -174,8 +172,8 @@ if __name__ == "__main__":
     for k, v in config.items():
         logger.info(f"{k}: {v}")
     client = authenticate(
-        FORM_RECOGNIZER_ENDPOINT,
-        FORM_RECOGNIZER_KEY,
+        v.FORM_RECOGNIZER_ENDPOINT,
+        v.FORM_RECOGNIZER_KEY,
         training=(args.train_model or args.delete_model) or False
     )
 
