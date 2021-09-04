@@ -21,7 +21,9 @@ logger = logging.getLogger(__name__)
 
 
 def get_parser():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        "CLI for training or using Custom Vision Object Detection models"
+    )
     parser.add_argument("--analyse-image", action="store_true")
     parser.add_argument("--images", nargs="+")
     parser.add_argument("--model-iteration-name")
@@ -52,7 +54,7 @@ def authenticate(key: str, training: bool = False):
 
 
 def train_model():
-    # TODO
+    # TODO: Fulfil this optional rubric
     raise NotImplementedError
 
 

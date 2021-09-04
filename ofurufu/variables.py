@@ -1,6 +1,10 @@
 import os
 from dataclasses import dataclass
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 @dataclass(frozen=True)
 class Variables:
@@ -35,4 +39,5 @@ class Variables:
     # VIDEO ANALYZER
     # --------------
     VIDEO_ANALYZER_ACCOUNT_ID: str = os.getenv("VIDEO_ANALYZER_ACCOUNT_ID")
-
+    VIDEO_ANALYZER_AUTH_PKEY: str = os.getenv("VIDEO_ANALYZER_AUTH_PKEY")
+    VIDEO_ANALYZER_LOCATION: str = os.getenv("VIDEO_ANALYZER_LOCATION")

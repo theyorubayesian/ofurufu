@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 
 
 def get_parser():
-    parser = argparse.ArgumentParser("CLI for training Form Recognizer")
+    parser = argparse.ArgumentParser("CLI for training or using Form Recognizer models")
     parser.add_argument("--config", default="config.yml")
     parser.add_argument("--train-model", action="store_true")
     parser.add_argument("--analyze-document", action="store_true")
