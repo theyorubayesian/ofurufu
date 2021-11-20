@@ -9,8 +9,11 @@ from azure.core.exceptions import ResourceNotFoundError
 from azure.ai.formrecognizer import FormRecognizerClient
 from azure.ai.formrecognizer import FormTrainingClient
 from azure.core.credentials import AzureKeyCredential
+from dotenv import load_dotenv
 
 from ofurufu.variables import Variables
+
+load_dotenv()
 
 v = Variables()
 
@@ -104,14 +107,17 @@ def analyze_id_document(client: FormRecognizerClient, document: str, **kwargs) -
         date_of_birth = id.fields.get("DateOfBirth", None)
         address = id.fields.get("Address", None)
         document_info = {
-            "source": document,
-            "first_name": first_name,
-            "last_name": last_name,
-            "date_of_birth": date_of_birth,
-            "address": address
+            "source": (document, None),
+            "first_name": (first_name.value, first_name.confidence),
+            "last_name": (last_name.value, last_name.confidence),
+            "date_of_birth": (date_of_birth.value, date_of_birth.confidence),
+            "address": (address.value, address.confidence)
         }
         for info in document_info:
-            logger.info(f"{info}: {document_info[info]}")
+            logger.info(
+                f"{info}: {document_info[info][0]} " \
+                f"| Confidence: {document_info[info][1]}"
+            )
         results.append(document_info)
 
     return results
@@ -140,17 +146,20 @@ def analyze_boarding_pass(client: FormRecognizerClient, model_id: str, document:
         flight_no = doc.fields.get("flightNo", None)
         boarding_time = doc.fields.get("boardingTime", None)
         document_info = {
-            "source": document,
-            "first_name": first_name.value,
-            "last_name": last_name.value,
-            "date": date.value,
-            "origin": origin.value,
-            "destination": destination.value,
-            "flight_no": flight_no.value,
-            "boarding_time": boarding_time.value
+            "source": (document, None),
+            "first_name": (first_name.value, first_name.confidence),
+            "last_name": (last_name.value, last_name.confidence),
+            "date": (date.value, date.confidence),
+            "origin": (origin.value, origin.confidence),
+            "destination": (destination.value, destination.confidence),
+            "flight_no": (flight_no.value, flight_no.confidence),
+            "boarding_time": (boarding_time.value, boarding_time.confidence)
         }
         for info in document_info:
-            logger.info(f"{info}: {document_info[info]}")
+            logger.info(
+                f"{info}: {document_info[info][0]}"
+                f" | Confidence: {document_info[info][1]}"
+            )
         results.append(document_info)
 
     return results
@@ -169,14 +178,14 @@ if __name__ == "__main__":
     args = get_parser()
     config = yaml.load(open(args.config, "r"), Loader=yaml.FullLoader)
     logger.info("--------Configurations--------")
-    for k, v in config.items():
-        logger.info(f"{k}: {v}")
+    for key, value in config.items():
+        logger.info(f"{key}: {value}")
     client = authenticate(
         v.FORM_RECOGNIZER_ENDPOINT,
         v.FORM_RECOGNIZER_KEY,
         training=(args.train_model or args.delete_model) or False
     )
-
+    
     if args.train_model:
         train_boarding_pass_model(
             client,
