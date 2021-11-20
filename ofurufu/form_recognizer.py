@@ -13,8 +13,6 @@ from dotenv import load_dotenv
 
 from ofurufu.variables import Variables
 
-load_dotenv()
-
 v = Variables()
 
 logging.basicConfig(

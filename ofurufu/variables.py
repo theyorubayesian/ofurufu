@@ -24,6 +24,12 @@ class Variables:
     CUSTOM_VISION_DEFAULT_MODEL_ITERATION_NAME: str = os.getenv("CUSTOM_VISION_DEFAULT_MODEL_ITERATION_NAME")
 
     # ---------------
+    # FACE RECOGNIZER
+    # ---------------
+    FACE_RECOGNIZER_ENDPOINT: str = os.getenv("FACE_RECOGNIZER_ENDPOINT")
+    FACE_RECOGNIZER_SUBSCRIPTION_KEY: str = os.getenv("FACE_RECOGNIZER_SUBSCRIPTION_KEY")
+    
+    # ---------------
     # FORM RECOGNIZER
     # ---------------
     FORM_RECOGNIZER_KEY: str = os.getenv("FORM_RECOGNIZER_KEY")
@@ -38,6 +44,6 @@ class Variables:
     # --------------
     # VIDEO ANALYZER
     # --------------
+    VIDEO_ANALYZER_SUBSCRIPTION_KEY: str = os.getenv("VIDEO_ANALYZER_SUBSCRIPTION_KEY")
     VIDEO_ANALYZER_ACCOUNT_ID: str = os.getenv("VIDEO_ANALYZER_ACCOUNT_ID")
-    VIDEO_ANALYZER_AUTH_PKEY: str = os.getenv("VIDEO_ANALYZER_AUTH_PKEY")
     VIDEO_ANALYZER_LOCATION: str = os.getenv("VIDEO_ANALYZER_LOCATION")

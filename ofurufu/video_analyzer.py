@@ -1,14 +1,14 @@
 import argparse
+import io
 import logging
 import os
+import sys
 import time
-from typing import Optional
-from typing import List
+from typing import Type
 
-import requests
+from PIL import Image
+from video_indexer import VideoIndexer
 
-import ofurufu.blob as blob
-from ofurufu import apiformat as api_fmt
 from ofurufu.variables import Variables
 
 logging.basicConfig(
@@ -20,231 +20,100 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 v = Variables()
-BASE_URL = api_fmt.BASE.format(
-    location=v.VIDEO_ANALYZER_LOCATION,
-    accountId=v.VIDEO_ANALYZER_ACCOUNT_ID
-)
-
-
-def get_access_token(
-        location: str,
-        account_id: str,
-        permission: str,
-        headers: dict
-) -> Optional[str]:
-    """
-
-    :param location:
-    :param account_id:
-    :param permission:
-    :param headers:
-    :return:
-    """
-    url = api_fmt.ACCESS_TOKEN_WITH_PERMISSION.format(
-        location=location, account_id=account_id, permission=permission)
-
-    response = requests.get(url, headers=headers)
-    if response.status_code == 200:
-        logger.info("Obtained Access Token successfully")
-        return response.json()
-    else:
-        logger.error("Error obtaining access token")
-        logger.error(f"API Response: {response.status_code} {response.reason}")
-    return None
-
-
-def create_person_model(
-        location: str,
-        account_id: str,
-        model_name: str,
-        access_token: str,
-        headers: dict
-) -> Optional[str]:
-    """
-
-    :param location:
-    :param account_id:
-    :param model_name:
-    :param access_token:
-    :param headers:
-    :return:
-    """
-    url = BASE_URL + api_fmt.CREATE_PERSON_MODEL.format(
-        location=location, accountId=account_id, name=model_name)
-    headers["Authorization"] = f"Bearer {access_token}"
-
-    response = requests.post(url, headers=headers)
-    if response.status_code == 201:
-        logger.info("Person Model created successfully")
-        return response.json()
-    else:
-        logger.error(f"Error creating Person Model: {model_name}")
-        logger.error(f"API Response: {response.status_code} {response.reason}")
-    return None
-
-
-def create_person(
-    person_model_id: str,
-    person_name: str,
-    headers: str
-):
-    url = BASE_URL + api_fmt.CREATE_PERSON.format(
-        personModelId=person_model_id,
-        name=person_name
-    )
-    response = requests.post(url, headers=headers)
-    if response.status_code == 201:
-        logger.info(f"Person: {person_name} created successfully in Person Model: {person_model_id}")
-        return response.json()
-    else:
-        logger.error(f"Error creating Person: {person_name} in Person Model: {person_model_id}")
-        logger.error(f"API Response: {response.status_code} {response.reason}")
-    return None
-
-
-def send_video_to_indexer(
-        video_name: str,
-        video_url: str,
-        privacy: str,
-        indexing_preset: str,
-        send_success_email: bool,
-        streaming_preset: str,
-        person_model_id: str,
-        headers: dict
-):
-    """
-
-    :param video_name:
-    :param video_url:
-    :param privacy:
-    :param indexing_preset:
-    :param send_success_email:
-    :param streaming_preset:
-    :param headers:
-    :return:
-    """
-    headers["Content-Type"] = "multipart/form-data"
-
-    url = BASE_URL + api_fmt.INDEX_VIDEO.format(
-        videoName=video_name,
-        privacy=privacy,
-        url=video_url,
-        indexingPreset=indexing_preset,
-        successEmail=send_success_email,
-        streamingPreset=streaming_preset
-    )
-    if person_model_id:
-        logger.info(f"Using Person Model with Id: {person_model_id}")
-        url += f"&personModelId={person_model_id}"
-
-    response = requests.post(url=url, headers=headers)
-    if response.status_code == 201:
-        logger.info("Video indexed successfully")
-        return response.json()
-    else:
-        logger.error("Error indexing video")
-        logger.error(f"API Response: {response.status_code} {response.reason}")
-    return None
-
-
-def get_video_index(
-    video_id: str,
-    headers: dict
-) -> Optional[str]:
-    """"
-    
-    :param video_id:
-    :param headers:
-    :return:
-    """
-    url = BASE_URL + api_fmt.GET_VIDEO_INDEX(
-        videoId=video_id
-    )
-
-    response = requests.get(url, headers=headers)
-    if response.status_code == 200:
-        logger.info(f"Retrieved index for Video with ID: {video_id}")
-        return response.json()
-    else:
-        logger.error("Error retrieving index for Video with ID: {video_id}")
-        logger.error(f"API Response: {response.status_code} {response.reason}")
-    return None
-
-
-def get_video_thumbnail(
-    video_id: str, 
-    thumbnail_id: str, 
-    thumbnail_fmt: str,
-    output_dir: str,
-    headers: dict
-):
-    """
-    
-    :param video_id:
-    :param thumbnail_id:
-    :param thumbnail_fmt:
-    :param output_dir:
-    :param headers:
-    :return:
-    """
-    url = BASE_URL + api_fmt.GET_VIDEO_THUMBNAIL.format(
-        videoId=video_id,
-        thumbnailId=thumbnail_id,
-        fmt=thumbnail_fmt
-    )
-    response = requests.get(url, headers=headers)
-    if response.status_code == 200:
-        logger.info(f"Retrieved index for Video with ID: {video_id}")
-        thumbnail = response.content
-
-        os.makedirs(output_dir, exist_ok=True)
-        output_file = os.path.join(output_dir, "thumbnail" + thumbnail_id + ".jpeg")
-        with open(output_file, "wb") as f:
-            f.write(thumbnail)
-        logger.info(f"Thumbnail has been written to {output_file}")
-    else:
-        logger.error("Error retrieving index for Video with ID: {video_id}")
-        logger.error(f"API Response: {response.status_code} {response.reason}")
-    return None
-
-
-def create_face_for_person(
-    person_model_id: str,
-    person_id: str,
-    faces: List[str],
-    headers: dict
-):
-    """
-    
-    :param person_model_id:
-    :param person_id:
-    :param faces:
-    param headers:
-    """
-    url = BASE_URL + api_fmt.CREATE_FACE.format(
-        personModelId=person_model_id,
-        personId=person_id
-    )
-    data = {"urls": faces}
-    headers["Content-Type"] = "application/json"
-
-    response = requests.post(url, headers=headers, data=data)
 
 
 def get_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--index-video"
+    parser.add_argument("--upload-video", action="store_true")
+    parser.add_argument("--video-name")
+    parser.add_argument("--video-language", default="English")
+    parser.add_argument("--video-path")
+    parser.add_argument("--video-id")
+    parser.add_argument("--thumbnail-dir", default="outputs/indexer/thumbnails")
+
+    args = parser.parse_args()
+    return args
+
+
+def authenticate_video_indexer(subscription_id, location, account_id):
+    indexer = VideoIndexer(
+        vi_subscription_key=subscription_id,
+        vi_location=location,
+        vi_account_id=account_id
     )
+
+    indexer.check_access_token()
+    return indexer
+
+
+def save_face_thumbnails(video_info, video_id: str, thumbnail_dir: str, indexer: VideoIndexer):
+    images = []
+    img_raw = []
+    img_strs = []
+    thumbnail_filenames = []
+
+    os.makedirs(thumbnail_dir, exist_ok=True)
+
+    thumbnails = video_info['videos'][0]['insights']['faces'][0]['thumbnails']
+
+    logger.info(f"Getting thumbnails in video: {video_id}")
+
+    for thumb in thumbnails:
+        logger.info(thumb)
+        thumbnail_filenames.append(thumb['fileName'])
+        thumbnail_id = thumb['id']
+        img_code = indexer.get_thumbnail_from_video_indexer(video_id, thumbnail_id)
+
+        img_strs.append(img_code)
+        img_stream = io.BytesIO(img_code)
+        img_raw.append(img_stream)
+        img = Image.open(img_stream)
+        images.append(img)
+
+    for filename, image in zip(thumbnail_filenames, images):
+        image.save(f"{thumbnail_dir}/{filename}")
+
+    return thumbnail_filenames
+
+
+def get_sentiment_and_emotion(video_info):
+    return {
+        "sentiments": video_info['summarizedInsights']['sentiments'],
+        "emotions": video_info['summarizedInsights']["emotions"]
+    }
 
 
 def main():
     args = get_parser()
-    headers = {
-        "Ocp-Apim-Subscription-Key": v.VIDEO_ANALYZER_AUTH_PKEY
-    }
-    get_access_token("trial", v.VIDEO_ANALYZER_ACCOUNT_ID, "Owner", headers)
+    uploaded_video_id = args.video_id
+
+    indexer = authenticate_video_indexer(
+        v.VIDEO_ANALYZER_SUBSCRIPTION_KEY,
+        v.VIDEO_ANALYZER_LOCATION,
+        v.VIDEO_ANALYZER_ACCOUNT_ID
+    )
+    
+    if args.upload_video:
+        logger.info(f"Uploading video: {args.video_path} to indexer")
+        uploaded_video_id = indexer.upload_to_video_indexer(
+            input_filename=args.video_path,
+            video_name=args.video_name,
+            video_language=args.video_language
+        )
+        time.sleep(300) # NOTE: Hack to allow indexing
+    
+    video_info = indexer.get_video_info(uploaded_video_id, video_language=args.video_language)
+
+    logger.info(video_info)
+
+    thumbnails = save_face_thumbnails(
+        video_info, uploaded_video_id, args.thumbnail_dir, indexer
+        )
+    logger.info(f"Saved thumbnails: \n{thumbnails}")
+
+    sentiment_and_emotion = get_sentiment_and_emotion(video_info)
+    logger.info(sentiment_and_emotion)
 
 
-if "__name__" == "__main__":
+if __name__ == "__main__":
     main()
