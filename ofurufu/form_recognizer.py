@@ -9,7 +9,6 @@ from azure.core.exceptions import ResourceNotFoundError
 from azure.ai.formrecognizer import FormRecognizerClient
 from azure.ai.formrecognizer import FormTrainingClient
 from azure.core.credentials import AzureKeyCredential
-from dotenv import load_dotenv
 
 from ofurufu.variables import Variables
 

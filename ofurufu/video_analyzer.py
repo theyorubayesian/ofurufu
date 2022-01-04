@@ -2,9 +2,7 @@ import argparse
 import io
 import logging
 import os
-import sys
 import time
-from typing import Type
 
 from PIL import Image
 from video_indexer import VideoIndexer
