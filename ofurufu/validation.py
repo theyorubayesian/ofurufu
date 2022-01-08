@@ -119,7 +119,15 @@ def validate_boarding_pass(manifest_info, boarding_pass_info):
     return None
 
 
-def validate_person(manifest_info, person_video, id_card, face_client, indexer, threshold=0.65, thumbnail_dir="thumbnails"):
+def validate_person(
+    manifest_info, 
+    person_video, 
+    id_card, 
+    face_client, 
+    indexer, 
+    threshold=0.65, 
+    thumbnail_dir="outputs/indexer/thumbnails"
+):
     person_id = f"{manifest_info['First Name']}_{manifest_info['Last Name']}_{time.strftime('%Y%m%d-%H%M%S')}"
     
     uploaded_video_id = indexer.upload_video_to_indexer(
@@ -160,6 +168,7 @@ def validate_person(manifest_info, person_video, id_card, face_client, indexer, 
 
 
 def validate_luggage():
+    # TODO: This is not currently in use but will be implemented
     pass
 
 
@@ -199,7 +208,7 @@ def main():
     form_client, face_client, indexer, blob_service_client = get_clients()
 
     header, manifest_info = get_passenger_manifest_info(info["manifest"])
-    manifest_info = sorted(manifest_info, key=lambda x: x["first_name"]+x["last_name"])
+    manifest_info = sorted(manifest_info, key=lambda x: x["First Name"]+x["Last Name"])
     validated_manifest_info = []
 
     for passenger_documents, passenger_info in zip(info["passengers"], manifest_info):
@@ -214,7 +223,6 @@ def main():
         )
         validated_manifest_info.append(validated_passenger_info)
 
-    
     validated_manifest_path = info["manifest"].replace("manifest", "validated_manifest")
     with open(validated_manifest_path, "w") as f:
         writer = csv.DictWriter(f, fieldnames=header)
