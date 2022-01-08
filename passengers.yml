@@ -1,0 +1,22 @@
+manifest: "material_preparation_step/manifest.csv"
+passengers:
+  - video: "material_preparation_step/ofurufu_video.mp4"
+    id_card: "material_preparation_step/identity_cards/babatundesimpson.png"
+    boarding_pass: "material_preparation_step/boarding_pass/babatundesimpson.pdf"
+    from_blob: False
+  - video: "material_preparation_step/ofurufu_video.mp4"
+    id_card: "material_preparation_step/identity_cards/jidejackson.png"
+    boarding_pass: "material_preparation_step/boarding_pass/jidejackson.pdf"
+    from_blob: False
+  - video: "material_preparation_step/ofurufu_video.mp4"
+    id_card: "material_preparation_step/boarding_pass/jolajolaoso.pdf"
+    boarding_pass: "material_preparation_step/boarding_pass/jolajolaoso.pdf"
+    from_blob: False
+  - video: "material_preparation_step/ofurufu_video.mp4"
+    id_card: "material_preparation_step/identity_cards/sarahmuhammad.png"
+    boarding_pass: "material_preparation_step/boarding_pass/sarahmuhammad.pdf"
+    from_blob: False
+  - video: "material_preparation_step/ofurufu_video.mp4"
+    id_card: "material_preparation_step/identity_cards/usmanaderibigbe.png"
+    boarding_pass: "material_preparation_step/boarding_pass/usmanaderibigbe.pdf"
+    from_blob: False
