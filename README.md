@@ -41,13 +41,7 @@ This section should contain all the student deliverables for this project.
 * Train a custom lighter detection model using the data in `starter/lighter_images` and [Azure Custom Vision](https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/)
 
 ## Submission Info
-All scripts are contained in the [ofurufu](ofurufu/)
-
-* [Item1](www.item1.com) - Description of item
-* [Item2](www.item2.com) - Description of item
-* [Item3](www.item3.com) - Description of item
-
-Include all items used to build project.
+All scripts are contained in the [ofurufu](ofurufu/) while screenshots are in the relevant step folders (step_*/)
 
 ## License
 
