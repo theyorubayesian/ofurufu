@@ -1,0 +1,47 @@
+11/20/2021 03:50:50 - INFO - __main__ - PID: 62042 -  --------Configurations--------
+11/20/2021 03:50:50 - INFO - __main__ - PID: 62042 -  logFile: logs/ofurufu.log
+11/20/2021 03:50:50 - INFO - __main__ - PID: 62042 -  training: {'modelName': 'boarding-pass-recognizer', 'useLabelFile': True, 'dataFilePrefix': 'boarding_pass_training_data'}
+11/20/2021 03:50:50 - INFO - __main__ - PID: 62042 -  Authenticated successfully
+11/20/2021 03:50:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -  Request URL: 'https://ofurufu-form-recog.cognitiveservices.azure.com//formrecognizer/v2.1/custom/models/f6b6b8a4-927f-4bfa-9040-bbc95464043d/analyze?includeTextDetails=false'
+11/20/2021 03:50:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -  Request method: 'POST'
+11/20/2021 03:50:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -  Request headers:
+11/20/2021 03:50:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'Content-Type': 'application/pdf'
+11/20/2021 03:50:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'Accept': 'application/json'
+11/20/2021 03:50:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'x-ms-client-request-id': 'abb1d688-49ac-11ec-ac0b-aeafdb1e8c93'
+11/20/2021 03:50:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'User-Agent': 'azsdk-python-ai-formrecognizer/3.1.2 Python/3.8.10 (macOS-12.0.1-arm64-arm-64bit)'
+11/20/2021 03:50:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'Ocp-Apim-Subscription-Key': 'REDACTED'
+11/20/2021 03:50:50 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -  A body is sent with the request
+11/20/2021 03:50:52 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -  Response status: 202
+11/20/2021 03:50:52 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -  Response headers:
+11/20/2021 03:50:52 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'Content-Length': '0'
+11/20/2021 03:50:52 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'Operation-Location': 'https://ofurufu-form-recog.cognitiveservices.azure.com/formrecognizer/v2.1/custom/models/f6b6b8a4-927f-4bfa-9040-bbc95464043d/analyzeresults/87a94418-b1a1-410b-8f7e-13fc99fed0e1'
+11/20/2021 03:50:52 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'x-envoy-upstream-service-time': '144'
+11/20/2021 03:50:52 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'apim-request-id': '511c5be4-e3f5-49a6-8ff3-01ebae683d37'
+11/20/2021 03:50:52 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload'
+11/20/2021 03:50:52 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'x-content-type-options': 'nosniff'
+11/20/2021 03:50:52 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'Date': 'Sat, 20 Nov 2021 02:50:51 GMT'
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -  Request URL: 'https://ofurufu-form-recog.cognitiveservices.azure.com/formrecognizer/v2.1/custom/models/f6b6b8a4-927f-4bfa-9040-bbc95464043d/analyzeresults/87a94418-b1a1-410b-8f7e-13fc99fed0e1'
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -  Request method: 'GET'
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -  Request headers:
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'x-ms-client-request-id': 'abb1d688-49ac-11ec-ac0b-aeafdb1e8c93'
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'User-Agent': 'azsdk-python-ai-formrecognizer/3.1.2 Python/3.8.10 (macOS-12.0.1-arm64-arm-64bit)'
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'Ocp-Apim-Subscription-Key': 'REDACTED'
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -  No body was attached to the request
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -  Response status: 200
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -  Response headers:
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'Content-Length': '1551'
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'Content-Type': 'application/json; charset=utf-8'
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'x-envoy-upstream-service-time': '34'
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'apim-request-id': '9aa7f87b-1636-47fd-860b-a6411031c3f1'
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload'
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'x-content-type-options': 'nosniff'
+11/20/2021 03:50:57 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 62042 -      'Date': 'Sat, 20 Nov 2021 02:50:57 GMT'
+11/20/2021 03:50:57 - INFO - __main__ - PID: 62042 -  --------Recognizing Boarding Pass document #1--------
+11/20/2021 03:50:57 - INFO - __main__ - PID: 62042 -  source: boarding_pass/usmanaderibigbe.pdf | Confidence: None
+11/20/2021 03:50:57 - INFO - __main__ - PID: 62042 -  first_name: USMAN | Confidence: 0.995
+11/20/2021 03:50:57 - INFO - __main__ - PID: 62042 -  last_name: ADERIBIGBE | Confidence: 0.995
+11/20/2021 03:50:57 - INFO - __main__ - PID: 62042 -  date: 17/07/2021 | Confidence: 0.995
+11/20/2021 03:50:57 - INFO - __main__ - PID: 62042 -  origin: ABUJA | Confidence: 0.995
+11/20/2021 03:50:57 - INFO - __main__ - PID: 62042 -  destination: LAGOS | Confidence: 0.995
+11/20/2021 03:50:57 - INFO - __main__ - PID: 62042 -  flight_no: ABVLOS786 | Confidence: 0.995
+11/20/2021 03:50:57 - INFO - __main__ - PID: 62042 -  boarding_time: 10:00 | Confidence: 0.98

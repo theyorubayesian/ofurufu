@@ -1,0 +1,44 @@
+11/20/2021 02:36:16 - INFO - __main__ - PID: 60868 -  --------Configurations--------
+11/20/2021 02:36:16 - INFO - __main__ - PID: 60868 -  logFile: logs/ofurufu.log
+11/20/2021 02:36:16 - INFO - __main__ - PID: 60868 -  training: {'modelName': 'boarding-pass-recognizer', 'useLabelFile': True, 'dataFilePrefix': 'recognizer_model_training_data'}
+11/20/2021 02:36:16 - INFO - __main__ - PID: 60868 -  Authenticated successfully
+11/20/2021 02:36:16 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -  Request URL: 'https://ofurufu-form-recog.cognitiveservices.azure.com//formrecognizer/v2.1/prebuilt/idDocument/analyze?includeTextDetails=false'
+11/20/2021 02:36:16 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -  Request method: 'POST'
+11/20/2021 02:36:16 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -  Request headers:
+11/20/2021 02:36:16 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'Content-Type': 'image/png'
+11/20/2021 02:36:16 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'Accept': 'application/json'
+11/20/2021 02:36:16 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'x-ms-client-request-id': '40e7d9c4-49a2-11ec-a5d2-aeafdb1e8c93'
+11/20/2021 02:36:16 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'User-Agent': 'azsdk-python-ai-formrecognizer/3.1.2 Python/3.8.10 (macOS-12.0.1-arm64-arm-64bit)'
+11/20/2021 02:36:16 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'Ocp-Apim-Subscription-Key': 'REDACTED'
+11/20/2021 02:36:16 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -  A body is sent with the request
+11/20/2021 02:36:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -  Response status: 202
+11/20/2021 02:36:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -  Response headers:
+11/20/2021 02:36:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'Content-Length': '0'
+11/20/2021 02:36:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'Operation-Location': 'https://ofurufu-form-recog.cognitiveservices.azure.com/formrecognizer/v2.1/prebuilt/idDocument/analyzeResults/fe9c587e-3faf-402f-b274-72e0b7fb4dcf'
+11/20/2021 02:36:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'x-envoy-upstream-service-time': '195'
+11/20/2021 02:36:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'apim-request-id': 'fe9c587e-3faf-402f-b274-72e0b7fb4dcf'
+11/20/2021 02:36:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload'
+11/20/2021 02:36:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'x-content-type-options': 'nosniff'
+11/20/2021 02:36:18 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'Date': 'Sat, 20 Nov 2021 01:36:18 GMT'
+11/20/2021 02:36:23 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -  Request URL: 'https://ofurufu-form-recog.cognitiveservices.azure.com/formrecognizer/v2.1/prebuilt/idDocument/analyzeResults/fe9c587e-3faf-402f-b274-72e0b7fb4dcf'
+11/20/2021 02:36:23 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -  Request method: 'GET'
+11/20/2021 02:36:23 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -  Request headers:
+11/20/2021 02:36:23 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'x-ms-client-request-id': '40e7d9c4-49a2-11ec-a5d2-aeafdb1e8c93'
+11/20/2021 02:36:23 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'User-Agent': 'azsdk-python-ai-formrecognizer/3.1.2 Python/3.8.10 (macOS-12.0.1-arm64-arm-64bit)'
+11/20/2021 02:36:23 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'Ocp-Apim-Subscription-Key': 'REDACTED'
+11/20/2021 02:36:23 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -  No body was attached to the request
+11/20/2021 02:36:24 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -  Response status: 200
+11/20/2021 02:36:24 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -  Response headers:
+11/20/2021 02:36:24 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'Content-Length': '1564'
+11/20/2021 02:36:24 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'Content-Type': 'application/json; charset=utf-8'
+11/20/2021 02:36:24 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'x-envoy-upstream-service-time': '15'
+11/20/2021 02:36:24 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'apim-request-id': '9582a539-a569-4ccf-ae22-39ff174e1a16'
+11/20/2021 02:36:24 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload'
+11/20/2021 02:36:24 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'x-content-type-options': 'nosniff'
+11/20/2021 02:36:24 - INFO - azure.core.pipeline.policies.http_logging_policy - PID: 60868 -      'Date': 'Sat, 20 Nov 2021 01:36:24 GMT'
+11/20/2021 02:36:24 - INFO - __main__ - PID: 60868 -  --------Recognizing ID document #1--------
+11/20/2021 02:36:24 - INFO - __main__ - PID: 60868 -  source: identity_cards/babatundesimpson.png | Confidence: None
+11/20/2021 02:36:24 - INFO - __main__ - PID: 60868 -  first_name: BABATUNDE | Confidence: 0.396
+11/20/2021 02:36:24 - INFO - __main__ - PID: 60868 -  last_name: SIMPSON | Confidence: 0.744
+11/20/2021 02:36:24 - INFO - __main__ - PID: 60868 -  date_of_birth: 1994-11-01 | Confidence: 0.99
+11/20/2021 02:36:24 - INFO - __main__ - PID: 60868 -  address: 239, TRIANGLE SQUARE | Confidence: 0.824
