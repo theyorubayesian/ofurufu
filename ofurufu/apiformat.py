@@ -1,3 +1,7 @@
+"""
+This module is not currently in use
+"""
+
 # --------------
 # Video Analyzer
 # --------------

@@ -12,6 +12,8 @@ class Variables:
     # BLOB STORAGE
     # ------------
     BLOB_CONNECTION_STRING: str = os.getenv("BLOB_CONNECTION_STRING")
+    BLOB_ACCOUNT_KEY: str = os.getenv("BLOB_ACCOUNT_KEY")
+    BLOB_ACCOUNT_NAME: str = os.getenv("BLOB_ACCOUNT_NAME")
 
     # -------------
     # CUSTOM VISION
@@ -34,6 +36,7 @@ class Variables:
     # ---------------
     FORM_RECOGNIZER_KEY: str = os.getenv("FORM_RECOGNIZER_KEY")
     FORM_RECOGNIZER_ENDPOINT: str = os.getenv("FORM_RECOGNIZER_ENDPOINT")
+    FORM_RECOGNIZER_TRAINED_MODEL_ID: str = os.getenv("FORM_RECOGNIZER_TRAINED_MODEL_ID")
 
     # ----------
     # LABEL TOOL

@@ -41,7 +41,7 @@ def get_parser():
     return args
 
 
-def authenticate(
+def authenticate_form_client(
         endpoint: str, key: str, training: bool = False
 ) -> Union[FormRecognizerClient, FormTrainingClient]:
     if training:
@@ -177,7 +177,7 @@ if __name__ == "__main__":
     logger.info("--------Configurations--------")
     for key, value in config.items():
         logger.info(f"{key}: {value}")
-    client = authenticate(
+    client = authenticate_form_client(
         v.FORM_RECOGNIZER_ENDPOINT,
         v.FORM_RECOGNIZER_KEY,
         training=(args.train_model or args.delete_model) or False
@@ -203,7 +203,7 @@ if __name__ == "__main__":
             raise ValueError(msg)
 
         for document in args.documents:
-            analyzer(client=client, document=document, model_id=os.getenv("TRAINED_MODEL_ID"))
+            analyzer(client=client, document=document, model_id=v.FORM_RECOGNIZER_TRAINED_MODEL_ID)
 
     if args.delete_model:
         delete_trained_model(client, args.model_id)

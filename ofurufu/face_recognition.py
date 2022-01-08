@@ -97,3 +97,4 @@ def match_against_person_group(client: FaceClient, face_ids: list, person_group_
     for result in results:
         for candidate in result.candidates:
             logger.info(f"Candidate matched Person Group: {person_group_id} with confidence {candidate.confidence}")
+    return results

@@ -41,13 +41,13 @@ def authenticate(key: str, training: bool = False):
     :param training: Get client for model training or predictions
     :return: TrainingClient or PredictionClient
     """
+    credentials = ApiKeyCredentials(in_headers={"Training-key": key})
+
     if training:
         logger.info("Getting client for training")
-        credentials = ApiKeyCredentials(in_headers={"Training-key": key})
         client = CustomVisionTrainingClient(v.CUSTOM_VISION_TRAINING_ENDPOINT, credentials)
     else:
         logger.info("Getting client for prediction")
-        credentials = ApiKeyCredentials(in_headers={"Prediction-key": key})
         client = CustomVisionPredictionClient(v.CUSTOM_VISION_PREDICTION_ENDPOINT, credentials)
     logger.info("Authenticated successfully")
     return client
